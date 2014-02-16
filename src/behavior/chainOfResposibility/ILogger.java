@@ -1,6 +1,6 @@
 package behavior.chainOfResposibility;
 
 public interface ILogger {
-	void write(LogLevel aLevel, String aMsg);
+	void writeLog(LogLevel logLevel, String message);
 	void setNext(ILogger aLogger);
 }

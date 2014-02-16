@@ -7,13 +7,13 @@ public class ConsoleLogger implements ILogger {
 	private ILogger _next = null;
 	
 	@Override
-	public void write(LogLevel aLevel, String aMsg) {
+	public void writeLog(LogLevel logLevel, String message) {
 		
 		System.out.println("\nConsoleLogger:");
 		
-		String msg = aLevel + ": " + new Date() + ", " + aMsg;
+		String msg = logLevel + ": " + new Date() + ", " + message;
 		
-		if(LogLevel.Info == aLevel){
+		if(LogLevel.Info == logLevel){
 			System.out.println(msg);
 		}
 		else{
@@ -21,7 +21,7 @@ public class ConsoleLogger implements ILogger {
 		}
 		
 		if(_next != null){
-			_next.write(aLevel, aMsg);
+			_next.writeLog(logLevel, message);
 		}
 		
 	}

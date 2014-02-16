@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 import org.junit.Test;
 
-import behavior.integreter.grammar.Script;
+import behavior.intepreter.grammmar.Script;
 
 public class TestInterpreter {
 

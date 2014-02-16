@@ -1,4 +1,4 @@
-package behavior.integreter.grammar;
+package behavior.intepreter.grammmar;
 
 import java.util.LinkedList;
 import java.util.List;

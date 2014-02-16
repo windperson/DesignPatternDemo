@@ -1,4 +1,4 @@
-package behavior.integreter.grammar;
+package behavior.intepreter.grammmar;
 
 import behavior.intepreter.IContext;
 import behavior.intepreter.INode;
