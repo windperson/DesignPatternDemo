@@ -36,13 +36,19 @@ public class JsonConfigPropertyBuilder implements IConfigPropertyBuilder {
 			throw new ConfigurationError("THE LOCATION property must be set.");
 		}
 		
+		
+		
 		StringBuffer sb = new StringBuffer();
 		sb.append("{");
-		if(null == _platform) {
-			sb.append(getJsonElementStr("PLATFORM", _platform)).append(",");
-		}
 		
-		sb.append(getJsonElementStr("TIMEOUT", _timeout));
+		sb.append(getJsonElementStr("TIMEOUT", _timeout)).append(",");
+		
+		if(null == _platform) {
+			throw new ConfigurationError("THE PLATFORM property must be set.");
+		}
+		sb.append(getJsonElementStr("PLATFORM", _platform)).append(",");
+		
+		
 		sb.append(getJsonElementStr("LOCATION", _location));
 		sb.append("}");
 		
@@ -50,11 +56,11 @@ public class JsonConfigPropertyBuilder implements IConfigPropertyBuilder {
 	}
 	
 	private String getJsonElementStr(String aKey, String aValue){
-		return "\"" + aKey + "\":" + "\"" + aValue + "\"";
+		return "'" + aKey + "':" + "'" + aValue + "'";
 	}
 	
 	private String getJsonElementStr(String aKey, int aValue){
-		return "\"" + aKey + "\":" + aValue;
+		return "\'" + aKey + "':" + aValue;
 	}
 
 }
