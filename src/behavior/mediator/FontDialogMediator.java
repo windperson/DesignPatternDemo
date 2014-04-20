@@ -36,7 +36,6 @@ public class FontDialogMediator implements IDialogMediator {
 
 	@Override
 	public void closeDialog() {
-		// TODO Auto-generated method stub
 		System.out.println("Close the font dialog.");
 	}
 

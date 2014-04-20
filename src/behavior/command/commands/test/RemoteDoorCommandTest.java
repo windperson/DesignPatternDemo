@@ -1,7 +1,5 @@
 package behavior.command.commands.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import behavior.command.*;
@@ -38,13 +36,11 @@ public class RemoteDoorCommandTest {
 	
 	private void testDoorCommand()
 	{
-		
 		RemoteDoor door = new MockRemoteDoor("192.168.0.1", "open");
 		ICommand doorCmd = new RemoteDoorCommand(door);
 		_server.addCmd(doorCmd);
 		
 		_server.monitor();
-		
 	}
 
 }

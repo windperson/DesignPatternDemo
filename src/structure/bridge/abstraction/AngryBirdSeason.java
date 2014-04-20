@@ -46,6 +46,7 @@ public class AngryBirdSeason implements AngryBird {
 	@Override
 	public void fire() {
 		// do fire.
+		System.out.println("fire! (in " + this.getClass().toString() + " )");
 	}
 
 }

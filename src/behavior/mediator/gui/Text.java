@@ -8,7 +8,6 @@ public class Text extends Widget {
 	
 	public Text(String ID, IDialogMediator mediator) {
 		super(ID, mediator);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void setText(String aText){

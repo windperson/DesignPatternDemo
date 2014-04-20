@@ -7,11 +7,6 @@ public class Server {
 	
 	List<ICommand> _commands = new ArrayList<>();
 	
-	public Server()
-	{
-		
-	}
-	
 	public void addCmd(ICommand cmd)
 	{
 		_commands.add(cmd);
