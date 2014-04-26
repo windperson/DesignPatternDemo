@@ -1,7 +1,5 @@
 package structure.decorator;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class TestDecorator {
@@ -11,6 +9,9 @@ public class TestDecorator {
 		Stream encodedAndCompressedStream = new EncodingStream(
 												new CompressingStream(
 													new FileStream("a.txt")));
+		
+		encodedAndCompressedStream.writeString("User = teddy");
+		encodedAndCompressedStream.writeInt(8080);
 		
 		encodedAndCompressedStream.handleBufferFull();
 	}

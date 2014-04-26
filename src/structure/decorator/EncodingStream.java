@@ -8,12 +8,12 @@ public class EncodingStream extends StreamDecorator {
 
 	@Override
 	public void writeInt(int aInt) {
-		//
+		this._component.writeInt(aInt);
 	}
 
 	@Override
 	public void writeString(String aString) {
-		//
+		this._component.writeString(aString);
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class EncodingStream extends StreamDecorator {
 		this._component.handleBufferFull();
 	}
 	
-	private void DoHandling()
+	protected void DoHandling()
 	{
 		System.out.println("Encoding stream...");
 	}

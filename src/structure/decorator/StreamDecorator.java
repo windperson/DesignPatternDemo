@@ -7,4 +7,6 @@ public abstract class StreamDecorator extends Stream {
 	public StreamDecorator(Stream aStream){
 		_component = aStream;
 	}
+	
+	protected abstract void DoHandling();
 }

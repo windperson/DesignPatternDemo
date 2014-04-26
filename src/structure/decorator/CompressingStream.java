@@ -24,7 +24,7 @@ public class CompressingStream extends StreamDecorator {
 		this._component.handleBufferFull();
 	}
 	
-	private void DoHandling()
+	protected void DoHandling()
 	{
 		System.out.println("Compressing stream...");
 	}
