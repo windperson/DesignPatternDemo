@@ -1,10 +1,6 @@
 package structure.memento;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-import structure.memento.*;
 
 public class TestMemento {
 

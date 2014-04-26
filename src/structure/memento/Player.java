@@ -35,11 +35,17 @@ public class Player {
 	}
 
 	
+	/*
+	 * JAVA nested class
+	 * http://stackoverflow.com/questions/70324/java-inner-class-and-static-nested-class
+	 */
 	public static class Memento{
 		
 		private final int _hp;
 		private final int _ep;
 		
+		//private ctor. in inner class can only be access in outter class
+		//http://stackoverflow.com/a/12542295
 		private Memento(int aHp, int aEp){
 			_hp = aHp;
 			_ep = aEp;
