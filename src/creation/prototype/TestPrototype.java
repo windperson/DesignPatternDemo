@@ -5,14 +5,17 @@ import java.util.Date;
 import org.junit.Test;
 
 public class TestPrototype {
+	
+	private static final int MAX =50;
 
 	@Test
 	public void test() {
-		int max = 50;
+		
 		Date start = new Date();
 		Monster origin = new Monster(100,100, "\\fake\fakeMonsterModel.xml");
 		
-		for(int i=0;i< max - 1; i++){
+		for(int i=0;i< MAX - 1; i++){
+			@SuppressWarnings("unused")
 			Monster clone = origin.clone();
 		}
 		Date end = new Date();
@@ -22,10 +25,11 @@ public class TestPrototype {
 	
 	@Test
 	public void testUseCtor(){
-		int max = 50;
+		
 		Date start = new Date();
 		
-		for(int i=0;i< max; i++){
+		for(int i=0;i< MAX; i++){
+			@SuppressWarnings("unused")
 			Monster origin = new Monster(100,100, "\\fake\fakeMonsterModel.xml");
 		}
 		Date end = new Date();
