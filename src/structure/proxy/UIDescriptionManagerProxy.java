@@ -21,10 +21,12 @@ public class UIDescriptionManagerProxy implements IUIDescriManager {
 	}
 	
 	private boolean isCached(String id){
-		if(null == map.get(id))
+		if(null == map.get(id)){
 			return false;
-		else
+		}
+		else{
 			return true;
+		}
 	}
 	
 	private String getCached(String id){
