@@ -13,9 +13,9 @@ public class TestVisitor {
 	public void test() {
 		List<MapNode> map = new LinkedList<MapNode>();
 		
-		map.add(new ArchitectureNode("House"));
+		map.add(new HouseNode("House"));
 		map.add(new ArchitectureNode("Bridge"));
-		map.add(new ArchitectureNode("Castle"));
+		map.add(new CastleNode("Castle"));
 		
 		map.add(new FurnitureNode("Bed"));
 		map.add(new FurnitureNode("Chair"));
@@ -28,11 +28,17 @@ public class TestVisitor {
 		}
 		
 		CountNumberOfFurnitureVisistor countVisitor = new CountNumberOfFurnitureVisistor();
+		GenerateDescriptionVisitor genVisitor = new GenerateDescriptionVisitor();
+		
 		for(MapNode node : map){
 			node.accept(countVisitor);
+			node.accept(genVisitor);
 		}
 		
 		assertEquals(4, countVisitor.getNumberOfVisistedFurnitureNode());
+		
+		
+		
 		
 	}
 
