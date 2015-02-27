@@ -36,6 +36,7 @@ public class Context implements IContext {
 			closeStream(reader);
 		}
 		_tokens = tokenList.iterator();
+		//prepare the 1st to be processed _currentToken
 		nextToken();
 	}
 	

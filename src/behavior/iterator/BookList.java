@@ -1,9 +1,10 @@
 package behavior.iterator;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BookList implements IAggregatable {
+public class BookList implements IAggregatable, Iterable<Book> {
 	
 	private class BookIterator implements IIterator{
 
@@ -46,6 +47,38 @@ public class BookList implements IAggregatable {
 	
 	public boolean isEmpty(){
 		return list.isEmpty();
+	}
+
+	@Override
+	public Iterator<Book> iterator() {
+		return new BookListJavaIterator(new BookIterator());
+	}
+	
+	private class BookListJavaIterator implements Iterator<Book>{
+		
+		BookIterator _iterator = null;
+		
+		public BookListJavaIterator(BookIterator iterator){
+			_iterator = iterator;
+		}
+
+		@Override
+		public boolean hasNext() {
+			return _iterator.hasNext();
+		}
+
+		@Override
+		public Book next() {
+			return _iterator.next();
+		}
+
+		@Override
+		public void remove() {
+			//optional method, don't support it in normal situation
+			//http://stackoverflow.com/questions/1536273/why-iterator-remove-has-been-described-as-optional-operation
+			throw new UnsupportedOperationException();
+		}
+		
 	}
 
 }

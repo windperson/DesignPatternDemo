@@ -13,7 +13,7 @@ public class ConsoleLogger implements ILogger {
 		
 		String msg = logLevel + ": " + new Date() + ", " + message;
 		
-		if(LogLevel.Info == logLevel){
+		if(LogLevel.Info == logLevel || LogLevel.Debug == logLevel){
 			System.out.println(msg);
 		}
 		else{

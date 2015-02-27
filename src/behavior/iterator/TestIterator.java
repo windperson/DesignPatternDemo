@@ -1,7 +1,5 @@
 package behavior.iterator;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class TestIterator {
@@ -20,6 +18,10 @@ public class TestIterator {
 		IIterator iterator = bookList.createIterator();
 		while(iterator.hasNext()){
 			System.out.println(iterator.next().getName());
+		}
+		
+		for (Book book : bookList) {
+			System.out.println(book.getName());
 		}
 	}
 
